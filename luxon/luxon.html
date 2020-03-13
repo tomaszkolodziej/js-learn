@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>luxon.js - learn</title>
+		<script src="luxon.js"></script>
+	</head>
+	<body>
+		www: https://moment.github.io/luxon/docs/manual/tour.html<br>
+		formatowanie: https://moment.github.io/luxon/docs/manual/formatting<br>
+		parsowanie: https://moment.github.io/luxon/docs/manual/parsing.html<br>
+		operacje na datach: https://moment.github.io/luxon/docs/manual/math.html<br>
+		click F12 to see results in console
+
+		<script>
+			console.log('data zdefiniowane: ', luxon.DateTime.local(2017, 5, 16, 8, 30));
+			console.log('data bieżąca: ', luxon.DateTime.local());
+			console.log('data bieżąca to string: ', luxon.DateTime.local().toString());
+
+			var d1 = luxon.DateTime.local();
+			console.log('rok: ', d1.year, ', miesiac: ', d1.month, ', dzien: ', d1.day);
+
+			console.log('data formatowana: ', d1.toFormat('HH:mm'));
+			console.log('from iso: ', luxon.DateTime.fromISO("2017-03-23"));
+			console.log('from seconds: ', luxon.DateTime.fromSeconds(1542674993).toString());
+
+			var d2 = luxon.DateTime.local();
+			console.log('dodanie 1 rok, 2 miesiace, 3 dni, 1 godzina, 3 minuty: ', d2.plus({years: 1, months: 2, days: 3, hours: 1, minutes: 3}).toString());
+
+			console.log('porównanie dat: ', d1 < d2);
+			console.log('porównanie tylko roku: ', d1.hasSame(luxon.DateTime.local(), 'year'));
+
+			console.log('duration, np. godzina na minuty: ', luxon.Duration.fromObject({hours: 2, minutes: 13}).as('minutes'));
+
+			console.log('sprawdzenie czy data jest prawidłowa: ', luxon.DateTime.local().isValid);
+
+		</script>
+	</body>
+</html>
