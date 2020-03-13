@@ -7,7 +7,7 @@
 		www: https://moment.github.io/luxon/docs/manual/tour.html<br>
 		formatowanie: https://moment.github.io/luxon/docs/manual/formatting<br>
 		parsowanie: https://moment.github.io/luxon/docs/manual/parsing.html<br>
-		operacje na datach: https://moment.github.io/luxon/docs/manual/math.html<br>
+		operacje na datach: https://moment.github.io/luxon/docs/manual/math.html<br><br>
 		click F12 to see results in console
 
 		<script>
@@ -32,6 +32,7 @@
 
 			console.log('sprawdzenie czy data jest prawidłowa: ', luxon.DateTime.local().isValid);
 
+			console.log('luxon data z js Date: ', luxon.DateTime.fromJSDate(new Date()).toFormat('dd-MM-yyyy, HH:mm'));
 		</script>
 	</body>
 </html>
